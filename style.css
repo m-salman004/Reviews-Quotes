@@ -64,3 +64,28 @@ p,button{
     padding: 5px;
     border-radius: 5px;
 }
+.random-btn:hover {
+    background-color: hsl(205, 78%, 60%);
+    color: white;
+    border-color: white;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 100vw;
+    }
+    .reviewCard {
+        width: 90vw;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .container {
+        width: 90vw;
+    }
+    .reviewCard{
+        width: 90vw;
+        margin: 0 auto;
+    }
+  }
