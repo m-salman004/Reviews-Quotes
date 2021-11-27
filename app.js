@@ -17,4 +17,56 @@ const reviews = [
         text:
           "My name is M. Salman. My Father name is Tariq Nazir. My Qualification is BS Computer Sciencs (Continue). I live in Faisalabad. Am a Professional Graphic Designer.",
       },
-]
+];
+const img = document.getElementById('person-img');
+  const author = document.getElementById('author');
+  const job = document.getElementById('job');
+  const info = document.getElementById('info');
+
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  const randomBtn = document.querySelector('.random-btn');
+
+  let person = 0;
+
+  window.addEventListener('DOMContentLoaded', function(){
+
+    reviewPerson();
+  });
+
+  function reviewPerson(){
+      const review = reviews[person];
+
+      img.src = review.img;
+      author.textContent = review.name;
+      job.textContent = review.job;
+      info.textContent = review.text;    
+  }
+
+  prevBtn.onclick = function () {
+
+    person--;
+
+    if(person < 0){
+        person = reviews.length - 1;
+    }
+
+    reviewPerson();
+  }
+
+  nextBtn.onclick = function () {
+
+    person++;
+
+    if(person > reviews.length - 1){
+        person = 0;
+    }
+
+    reviewPerson();
+  }
+
+  randomBtn.onclick = function () {
+
+    person = Math.floor(Math.random() * reviews.length);
+    reviewPerson();
+  }
